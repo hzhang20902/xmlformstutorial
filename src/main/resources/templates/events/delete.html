@@ -3,7 +3,7 @@
 <head th:replace="fragments :: head"></head>
 <body class="container">
 
-<nav th:replace="fragments :: header"></nav>
+<header th:replace="fragments :: header"></header>
 
 <form method="post">
 
@@ -11,7 +11,7 @@
         <th:block th:each="nameVar : ${eventsJawn}">
             <div class="form-group">
             <label>
-                <span th:text="${nameVar.name}"></span> </br>
+                <span th:text="${nameVar.name}"></span>
                 <input type="checkbox" name="eventIds" th:value="${nameVar.id}" class="form-control">
             </label>
             </div>
