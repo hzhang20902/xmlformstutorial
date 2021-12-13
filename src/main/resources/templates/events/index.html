@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<head th:replace="fragments :: head"></head>
+
+<h1>You Really Want To Go To THESE??</h1>
+
+<nav th:replace="fragments :: header"></nav>
+<p th:unless="${eventsJawn} and ${eventsJawn.size()}">Hey get outta here, there's nothin here</p>
+<body class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+        </thead>
+        <tr th:each="nameVar : ${eventsJawn}">
+            <td th:text="${nameVar}"></td>
+        </tr>
+    </table>
 
 </body>
 </html>
