@@ -14,12 +14,16 @@
             <th>ID</th>
             <th>Name</th>
             <th>Description</th>
+            <th>Contact Email</th>
+            <th>Type</th>
         </tr>
         </thead>
         <tr th:each="nameVar : ${eventsJawn}">
             <td th:text="${nameVar.id}"></td>
             <td th:text="${nameVar.name}"></td>
             <td th:text="${nameVar.description}"></td>
+            <td th:text="${nameVar.contactEmail}"></td>
+            <td th:text="${nameVar.type.displayName}"></td>
         </tr>
     </table>
 
