@@ -1,8 +1,18 @@
-body {
+.container {
     font-size: 18px;
-    color: purple;
+    color: black;
 }
 
 .error {
 color:red;
+}
+
+h1 {
+    font: Helvetica Bold;
+    color: Olive;
+}
+
+a {
+    font: new courier;
+    color: green;
 }

@@ -1,31 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 <body class="container">
 
-<h1>You Really Want To Go To THESE??</h1>
+<h1 th:unless="${eventsJawn} and ${eventsJawn.size()}">Hey get outta here, there's nothin here</h1>
 
-<nav th:replace="fragments :: header"></nav>
-<p th:unless="${eventsJawn} and ${eventsJawn.size()}">Hey get outta here, there's nothin here</p>
 
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Contact Email</th>
-            <th>Type</th>
-        </tr>
-        </thead>
-        <tr th:each="nameVar : ${eventsJawn}">
-            <td th:text="${nameVar.id}"></td>
-            <td th:text="${nameVar.name}"></td>
-            <td th:text="${nameVar.description}"></td>
-            <td th:text="${nameVar.contactEmail}"></td>
-            <td th:text="${nameVar.type.displayName}"></td>
-        </tr>
-    </table>
+<p th:if="${eventsJawn.size()} > 0">You wanna do any of this?</p>
+
+
+<header th:replace="fragments :: header"></header>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Event Name</th>
+    </tr>
+    </thead>
+    <tr th:each="event : ${eventsJawn}">
+        <td><a th:href="'/events/detail?eventId=' + ${event.id}" th:text="${event.name}"></a></td>
+    </tr>
+</table>
 
 </body>
 </html>

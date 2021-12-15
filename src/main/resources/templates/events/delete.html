@@ -4,6 +4,8 @@
 <body class="container">
 
 <header th:replace="fragments :: header"></header>
+</b>
+</b>
 
 <form method="post">
 
@@ -12,7 +14,7 @@
             <div class="form-group">
             <label>
                 <span th:text="${nameVar.name}"></span>
-                <input type="checkbox" name="eventIds" th:value="${nameVar.id}" class="form-control">
+                <input type="checkbox" value="1" name="eventIds" th:value="${nameVar.id}" class="form-control">
             </label>
             </div>
         </th:block>
